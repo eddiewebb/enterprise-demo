@@ -3,12 +3,12 @@ workflows:
   version: 2
   build:
     jobs:
-    - verify: {}
+    - verify: 
+        context: Production Credentials
 jobs:
   verify:
     description: Explores contexts
     docker:
     - image: circleci/openjdk:8-jdk
-    context: Production Credentials
     steps:
       - run: echo ${FAKE_SECRET}
