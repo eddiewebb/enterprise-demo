@@ -1,0 +1,14 @@
+version: 2
+workflows:
+  version: 2
+  build:
+    jobs:
+    - verify: {}
+jobs:
+  verify:
+    description: Explores contexts
+    docker:
+    - image: circleci/openjdk:8-jdk
+    context: Production Credentials
+    steps:
+      - run: echo ${FAKE_SECRET}
